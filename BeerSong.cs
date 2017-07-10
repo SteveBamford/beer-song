@@ -5,18 +5,18 @@ namespace BeerSong
 {
     public class BeerSong
     {
-        private VerseIndexChecker _indexChecker;
-        private VerseManager _verseManager;
+        private VerseIndexChecker indexChecker;
+        private VerseManager verseManager;
 
         public BeerSong()
         {
-            _verseManager = new VerseManager();
-            _indexChecker = new VerseIndexChecker();
+            this.verseManager = new VerseManager();
+            this.indexChecker = new VerseIndexChecker();
         }
 
         public string Verse(int number)
         {
-            return _verseManager.GetVerse(number).Text;
+            return this.verseManager.GetVerse(number).Text;
         }
 
         public string Verses(int begin, int end)
@@ -44,8 +44,8 @@ namespace BeerSong
 
         private void CheckBeginAndEndValid(int begin, int end)
         {
-            if (_indexChecker.AreIndecesInCorrectOrder(begin, end))
-                throw new BeerSongException(_indexChecker.GetIndecesNotInCorrectOrderMessage(begin, end));
+            if (this.indexChecker.AreIndecesInCorrectOrder(begin, end))
+                throw new BeerSongException(this.indexChecker.GetIndecesNotInCorrectOrderMessage(begin, end));
         }
     }
 }

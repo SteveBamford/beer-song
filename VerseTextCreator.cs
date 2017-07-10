@@ -6,13 +6,13 @@ namespace BeerSong
 {
     internal class VerseTextCreator
     {
-        private VerseIndexChecker _indexChecker;
-        private VerseNonGenericLineCreator _nonGenericLineCreator;
+        private VerseIndexChecker indexChecker;
+        private VerseNonGenericLineCreator nonGenericLineCreator;
 
         public VerseTextCreator()
         {
-            _indexChecker = new VerseIndexChecker();
-            _nonGenericLineCreator = new VerseNonGenericLineCreator();
+            this.indexChecker = new VerseIndexChecker();
+            this.nonGenericLineCreator = new VerseNonGenericLineCreator();
         }
 
         public string GetVerseText(int index)
@@ -22,29 +22,29 @@ namespace BeerSong
 
         public string GetVerseFirstLineText(int index)
         {
-            if (_indexChecker.IsIndexValid(index))
-                if (_indexChecker.IsIndexGeneric(index))
+            if (this.indexChecker.IsIndexValid(index))
+                if (this.indexChecker.IsIndexGeneric(index))
                     return GetGenericFirstLineText(index);
                 else
                     return GetNonGenericFirstLineText(index);
             else
-                throw new BeerSongException(_indexChecker.GetInvalidIndexMessage(index));
+                throw new BeerSongException(this.indexChecker.GetInvalidIndexMessage(index));
         }
 
         public string GetVerseSecondLineText(int index)
         {
-            if (_indexChecker.IsIndexValid(index))
-                if (_indexChecker.IsIndexGeneric(index))
+            if (this.indexChecker.IsIndexValid(index))
+                if (this.indexChecker.IsIndexGeneric(index))
                     return GetGenericSecondLineText(index);
                 else
                     return GetNonGenericSecondLineText(index);
             else
-                throw new BeerSongException(_indexChecker.GetInvalidIndexMessage(index));
+                throw new BeerSongException(this.indexChecker.GetInvalidIndexMessage(index));
         }
 
         private string GetNonGenericSecondLineText(int index)
         {
-            return _nonGenericLineCreator.GetNonGenericSecondLine(index);
+            return this.nonGenericLineCreator.GetNonGenericSecondLine(index);
         }
 
         private string GetGenericSecondLineText(int index)
@@ -54,7 +54,7 @@ namespace BeerSong
 
         private string GetNonGenericFirstLineText(int index)
         {
-            return _nonGenericLineCreator.GetNonGenericFirstLine(index);
+            return this.nonGenericLineCreator.GetNonGenericFirstLine(index);
         }
 
         private string GetGenericFirstLineText(int index)

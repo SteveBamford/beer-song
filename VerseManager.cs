@@ -8,30 +8,30 @@ namespace BeerSong
     internal class VerseManager
     {
 
-        private IVerse[] _verses;
-        private VerseIndexChecker _indexChecker;
+        private IVerse[] verses;
+        private VerseIndexChecker indexChecker;
 
         public VerseManager()
         {
-            _indexChecker = new VerseIndexChecker();
+            this.indexChecker = new VerseIndexChecker();
             PopulateVerseList();
         }
 
         private void PopulateVerseList()
         {
-            _verses = new VerseListCreator().GetVerseList().ToArray();
+            this.verses = new VerseListCreator().GetVerseList().ToArray();
         }
 
         public IVerse GetVerse(int verseIndex)
         {
-            if (_indexChecker.IsIndexValid(verseIndex))
+            if (this.indexChecker.IsIndexValid(verseIndex))
                 return GetValidVerse(verseIndex);
-            throw new BeerSongException(_indexChecker.GetInvalidIndexMessage(verseIndex));
+            throw new BeerSongException(this.indexChecker.GetInvalidIndexMessage(verseIndex));
         }
 
         private IVerse GetValidVerse(int verseIndex)
         {
-            return _verses[verseIndex];
+            return this.verses[verseIndex];
         }
     }
 }
