@@ -5,31 +5,31 @@ using System.Linq;
 
 namespace BeerSong
 {
-    internal class BeerSongVerseManager
+    internal class VerseManager
     {
 
-        private IBeerSongVerse[] _verses;
-        private BeerSongIndexChecker _indexChecker;
+        private IVerse[] _verses;
+        private VerseIndexChecker _indexChecker;
 
-        public BeerSongVerseManager()
+        public VerseManager()
         {
-            _indexChecker = new BeerSongIndexChecker();
+            _indexChecker = new VerseIndexChecker();
             PopulateVerseList();
         }
 
         private void PopulateVerseList()
         {
-            _verses = new BeerSongVerseCreator().GetVerseList().ToArray();
+            _verses = new VerseListCreator().GetVerseList().ToArray();
         }
 
-        public IBeerSongVerse GetVerse(int verseIndex)
+        public IVerse GetVerse(int verseIndex)
         {
             if (_indexChecker.IsIndexValid(verseIndex))
                 return GetValidVerse(verseIndex);
             throw new BeerSongException(_indexChecker.GetInvalidIndexMessage(verseIndex));
         }
 
-        private IBeerSongVerse GetValidVerse(int verseIndex)
+        private IVerse GetValidVerse(int verseIndex)
         {
             return _verses[verseIndex];
         }

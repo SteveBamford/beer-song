@@ -4,15 +4,15 @@ using System.Text;
 
 namespace BeerSong
 {
-    internal class BeerSongVerseTextCreator
+    internal class VerseTextCreator
     {
-        private BeerSongIndexChecker _indexChecker;
-        private BeerSongNonGenericLineCreator _nonGenericLineCreator;
+        private VerseIndexChecker _indexChecker;
+        private VerseNonGenericLineCreator _nonGenericLineCreator;
 
-        public BeerSongVerseTextCreator()
+        public VerseTextCreator()
         {
-            _indexChecker = new BeerSongIndexChecker();
-            _nonGenericLineCreator = new BeerSongNonGenericLineCreator();
+            _indexChecker = new VerseIndexChecker();
+            _nonGenericLineCreator = new VerseNonGenericLineCreator();
         }
 
         public string GetVerseText(int index)

@@ -5,13 +5,13 @@ namespace BeerSong
 {
     public class BeerSong
     {
-        private BeerSongIndexChecker _indexChecker;
-        private BeerSongVerseManager _verseManager;
+        private VerseIndexChecker _indexChecker;
+        private VerseManager _verseManager;
 
         public BeerSong()
         {
-            _verseManager = new BeerSongVerseManager();
-            _indexChecker = new BeerSongIndexChecker();
+            _verseManager = new VerseManager();
+            _indexChecker = new VerseIndexChecker();
         }
 
         public string Verse(int number)

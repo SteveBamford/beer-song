@@ -4,9 +4,9 @@ using System.Text;
 
 namespace BeerSong
 {
-    internal class BeerSongVerse : IBeerSongVerse
+    internal class Verse : IVerse
     {
-        public BeerSongVerse(int verseIndex)
+        public Verse(int verseIndex)
         {
             Index = verseIndex;
             CreateText(verseIndex);
@@ -17,7 +17,7 @@ namespace BeerSong
 
         private void CreateText(int verseIndex)
         {
-            var textCreator = new BeerSongVerseTextCreator();
+            var textCreator = new VerseTextCreator();
             Text = textCreator.GetVerseText(verseIndex);
         }
     }

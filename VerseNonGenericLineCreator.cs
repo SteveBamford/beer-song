@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace BeerSong
 {
-    internal class BeerSongNonGenericLineCreator
+    internal class VerseNonGenericLineCreator
     {
         private Dictionary<int, string> _nonGenericFirstLines;
         private Dictionary<int, string> _nonGenericSecondLines;
 
-        public BeerSongNonGenericLineCreator()
+        public VerseNonGenericLineCreator()
         {
             CreateNonGenericFirstLinesDictionary();
             CreateNonGenericSecondLinesDictionary();

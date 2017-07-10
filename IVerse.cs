@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BeerSong
 {
-    interface IBeerSongVerse
+    interface IVerse
     {
         int Index { get; }
         string Text { get; }

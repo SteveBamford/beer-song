@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BeerSong
 {
-    internal class BeerSongIndexChecker
+    internal class VerseIndexChecker
     {
         internal const int MINIMUM_GENERIC_INDEX = 3;
         internal const int MAXIMUM_GENERIC_INDEX = 99;
