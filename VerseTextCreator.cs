@@ -15,49 +15,49 @@ namespace BeerSong
             this.nonGenericLineCreator = new VerseNonGenericLineCreator();
         }
 
-        public string GetVerseText(int index)
+        public string VerseLines(int index)
         {
-            return $"{GetVerseFirstLineText(index)}\n{GetVerseSecondLineText(index)}\n";
+            return $"{VerseFirstLine(index)}\n{VerseSecondLine(index)}\n";
         }
 
-        public string GetVerseFirstLineText(int index)
+        public string VerseFirstLine(int index)
         {
-            if (this.indexChecker.IsIndexValid(index))
-                if (this.indexChecker.IsIndexGeneric(index))
-                    return GetGenericFirstLineText(index);
+            if (this.indexChecker.IndexIsValid(index))
+                if (this.indexChecker.IndexIsForAGenericVerse(index))
+                    return GenericVerseFirstLine(index);
                 else
-                    return GetNonGenericFirstLineText(index);
+                    return NonGenericVerseFirstLine(index);
             else
-                throw new BeerSongException(this.indexChecker.GetInvalidIndexMessage(index));
+                throw new BeerSongException(this.indexChecker.InvalidIndexMessage(index));
         }
 
-        public string GetVerseSecondLineText(int index)
+        public string VerseSecondLine(int index)
         {
-            if (this.indexChecker.IsIndexValid(index))
-                if (this.indexChecker.IsIndexGeneric(index))
-                    return GetGenericSecondLineText(index);
+            if (this.indexChecker.IndexIsValid(index))
+                if (this.indexChecker.IndexIsForAGenericVerse(index))
+                    return GenericVerseSecondLine(index);
                 else
-                    return GetNonGenericSecondLineText(index);
+                    return NonGenericVerseSecondLine(index);
             else
-                throw new BeerSongException(this.indexChecker.GetInvalidIndexMessage(index));
+                throw new BeerSongException(this.indexChecker.InvalidIndexMessage(index));
         }
 
-        private string GetNonGenericSecondLineText(int index)
+        private string NonGenericVerseSecondLine(int index)
         {
-            return this.nonGenericLineCreator.GetNonGenericSecondLine(index);
+            return this.nonGenericLineCreator.NonGenericVerseSecondLine(index);
         }
 
-        private string GetGenericSecondLineText(int index)
+        private string GenericVerseSecondLine(int index)
         {
             return $"Take one down and pass it around, {index - 1} bottles of beer on the wall.";
         }
 
-        private string GetNonGenericFirstLineText(int index)
+        private string NonGenericVerseFirstLine(int index)
         {
-            return this.nonGenericLineCreator.GetNonGenericFirstLine(index);
+            return this.nonGenericLineCreator.NonGenericVerseFirstLine(index);
         }
 
-        private string GetGenericFirstLineText(int index)
+        private string GenericVerseFirstLine(int index)
         {
             return $"{index} bottles of beer on the wall, {index} bottles of beer.";
         }

@@ -19,17 +19,17 @@ namespace BeerSong
 
         private void PopulateVerseList()
         {
-            this.verses = new VerseListCreator().GetVerseList().ToArray();
+            this.verses = new VerseListCreator().VerseList().ToArray();
         }
 
-        public IVerse GetVerse(int verseIndex)
+        public IVerse Verse(int verseIndex)
         {
-            if (this.indexChecker.IsIndexValid(verseIndex))
-                return GetValidVerse(verseIndex);
-            throw new BeerSongException(this.indexChecker.GetInvalidIndexMessage(verseIndex));
+            if (this.indexChecker.IndexIsValid(verseIndex))
+                return ValidVerse(verseIndex);
+            throw new BeerSongException(this.indexChecker.InvalidIndexMessage(verseIndex));
         }
 
-        private IVerse GetValidVerse(int verseIndex)
+        private IVerse ValidVerse(int verseIndex)
         {
             return this.verses[verseIndex];
         }

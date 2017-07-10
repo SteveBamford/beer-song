@@ -18,7 +18,7 @@ namespace BeerSong
         private void CreateText(int verseIndex)
         {
             var textCreator = new VerseTextCreator();
-            Text = textCreator.GetVerseText(verseIndex);
+            Text = textCreator.VerseLines(verseIndex);
         }
     }
 }

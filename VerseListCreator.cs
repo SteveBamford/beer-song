@@ -6,7 +6,7 @@ namespace BeerSong
     internal class VerseListCreator
     {
 
-        internal IEnumerable<IVerse> GetVerseList()
+        internal IEnumerable<IVerse> VerseList()
         {
             List<IVerse> verseList = new List<IVerse>();
 

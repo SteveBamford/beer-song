@@ -30,14 +30,14 @@ namespace BeerSong
             this.nonGenericSecondLines.Add(0, "Go to the store and buy some more, 99 bottles of beer on the wall.");
         }
 
-        public string GetNonGenericFirstLine(int index)
+        public string NonGenericVerseFirstLine(int index)
         {
             if (this.nonGenericFirstLines.ContainsKey(index))
                 return this.nonGenericFirstLines[index];
             throw new BeerSongException($"No non-generic first line defined for index {index}");
         }
 
-        public string GetNonGenericSecondLine(int index)
+        public string NonGenericVerseSecondLine(int index)
         {
             if (this.nonGenericSecondLines.ContainsKey(index))
                 return this.nonGenericSecondLines[index];

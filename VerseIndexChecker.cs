@@ -11,31 +11,31 @@ namespace BeerSong
         internal const int MINIMUM_VERSE_INDEX = 0;
         internal const int MAXIMUM_VERSE_INDEX = 99;
 
-        internal string GetInvalidIndexMessage(int verseIndex)
+        internal string InvalidIndexMessage(int verseIndex)
         {
-            if (!IsIndexValid(verseIndex))
+            if (!IndexIsValid(verseIndex))
                 return $"Invalid verse index {verseIndex} (should be >= {MINIMUM_VERSE_INDEX} and <= {MAXIMUM_VERSE_INDEX})";
             return "";
         }
 
-        internal bool IsIndexValid(int verseIndex)
+        internal bool IndexIsValid(int verseIndex)
         {
             return verseIndex >= MINIMUM_VERSE_INDEX && verseIndex <= MAXIMUM_VERSE_INDEX;
         }
 
-        internal bool AreIndecesInCorrectOrder(int begin, int end)
+        internal bool IndecesAreInTheCorrectOrder(int begin, int end)
         {
             return begin <= end;
         }
 
         internal string GetIndecesNotInCorrectOrderMessage(int begin, int end)
         {
-            if (!AreIndecesInCorrectOrder(begin, end))
+            if (!IndecesAreInTheCorrectOrder(begin, end))
                 return $"Verse indexes in wrong order ({begin} must be <= {end})";
             return "";
         }
 
-        internal bool IsIndexGeneric(int verseIndex)
+        internal bool IndexIsForAGenericVerse(int verseIndex)
         {
             return verseIndex >= MINIMUM_GENERIC_INDEX && verseIndex <= MAXIMUM_GENERIC_INDEX;
         }

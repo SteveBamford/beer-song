@@ -15,7 +15,7 @@ namespace BeerSong
             var expected = $"{index} bottles of beer on the wall, {index} bottles of beer.";
             var sut = new VerseTextCreator();
 
-            Assert.Equal(expected, sut.GetVerseFirstLineText(index));
+            Assert.Equal(expected, sut.VerseFirstLine(index));
         }
 
         [Fact]
@@ -25,7 +25,7 @@ namespace BeerSong
             var expected = $"Take one down and pass it around, {index - 1} bottles of beer on the wall.";
             var sut = new VerseTextCreator();
 
-            Assert.Equal(expected, sut.GetVerseSecondLineText(index));
+            Assert.Equal(expected, sut.VerseSecondLine(index));
         }
 
         [Fact]
@@ -35,7 +35,7 @@ namespace BeerSong
             var expected = $"{index} bottles of beer on the wall, {index} bottles of beer.";
             var sut = new VerseTextCreator();
 
-            Assert.Equal(expected, sut.GetVerseFirstLineText(index));
+            Assert.Equal(expected, sut.VerseFirstLine(index));
         }
 
         [Fact]
@@ -45,7 +45,7 @@ namespace BeerSong
             var expected = $"Take one down and pass it around, {index - 1} bottles of beer on the wall.";
             var sut = new VerseTextCreator();
 
-            Assert.Equal(expected, sut.GetVerseSecondLineText(index));
+            Assert.Equal(expected, sut.VerseSecondLine(index));
         }
 
         [Fact]
@@ -55,7 +55,7 @@ namespace BeerSong
                 "2 bottles of beer on the wall, 2 bottles of beer.";
             var sut = new VerseTextCreator();
 
-            Assert.Equal(expected, sut.GetVerseFirstLineText(2));
+            Assert.Equal(expected, sut.VerseFirstLine(2));
         }
 
         [Fact]
@@ -65,7 +65,7 @@ namespace BeerSong
                 "Take one down and pass it around, 1 bottle of beer on the wall.";
             var sut = new VerseTextCreator();
 
-            Assert.Equal(expected, sut.GetVerseSecondLineText(2));
+            Assert.Equal(expected, sut.VerseSecondLine(2));
         }
 
     }

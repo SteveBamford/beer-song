@@ -16,7 +16,7 @@ namespace BeerSong
 
         public string Verse(int number)
         {
-            return this.verseManager.GetVerse(number).Text;
+            return this.verseManager.Verse(number).Text;
         }
 
         public string Verses(int begin, int end)
@@ -44,7 +44,7 @@ namespace BeerSong
 
         private void CheckBeginAndEndValid(int begin, int end)
         {
-            if (this.indexChecker.AreIndecesInCorrectOrder(begin, end))
+            if (this.indexChecker.IndecesAreInTheCorrectOrder(begin, end))
                 throw new BeerSongException(this.indexChecker.GetIndecesNotInCorrectOrderMessage(begin, end));
         }
     }
