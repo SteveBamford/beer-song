@@ -7,10 +7,12 @@ namespace BeerSong
     internal class BeerSongVerseTextCreator
     {
         private BeerSongIndexChecker _indexChecker;
+        private BeerSongNonGenericLineCreator _nonGenericLineCreator;
 
         public BeerSongVerseTextCreator()
         {
             _indexChecker = new BeerSongIndexChecker();
+            _nonGenericLineCreator = new BeerSongNonGenericLineCreator();
         }
 
         public string GetVerseText(int index)
@@ -42,7 +44,7 @@ namespace BeerSong
 
         private string GetNonGenericSecondLineText(int index)
         {
-            return "TODO"; //TODO
+            return _nonGenericLineCreator.GetNonGenericSecondLine(index);
         }
 
         private string GetGenericSecondLineText(int index)
@@ -52,7 +54,7 @@ namespace BeerSong
 
         private string GetNonGenericFirstLineText(int index)
         {
-            return "TODO"; //TODO
+            return _nonGenericLineCreator.GetNonGenericFirstLine(index);
         }
 
         private string GetGenericFirstLineText(int index)

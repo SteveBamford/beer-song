@@ -16,7 +16,7 @@ namespace BeerSong
             Assert.Equal(expected, new BeerSong().Verse(99));
         }
 
-        [Fact(Skip = "Remove to run test")]
+        [Fact]
         public void Last_generic_verse()
         {
             var expected =
@@ -26,7 +26,7 @@ namespace BeerSong
             Assert.Equal(expected, new BeerSong().Verse(3));
         }
 
-        [Fact(Skip = "Remove to run test")]
+        [Fact]
         public void Verse_2()
         {
             var expected =
@@ -36,7 +36,7 @@ namespace BeerSong
             Assert.Equal(expected, new BeerSong().Verse(2));
         }
 
-        [Fact(Skip = "Remove to run test")]
+        [Fact]
         public void Verse_1()
         {
             var expected =
@@ -46,7 +46,7 @@ namespace BeerSong
             Assert.Equal(expected, new BeerSong().Verse(1));
         }
 
-        [Fact(Skip = "Remove to run test")]
+        [Fact]
         public void Verse_0()
         {
             var expected =
@@ -56,7 +56,7 @@ namespace BeerSong
             Assert.Equal(expected, new BeerSong().Verse(0));
         }
 
-        [Fact(Skip = "Remove to run test")]
+        [Fact]
         public void First_two_verses()
         {
             var expected =
@@ -69,7 +69,7 @@ namespace BeerSong
             Assert.Equal(expected, new BeerSong().Verses(99, 98));
         }
 
-        [Fact(Skip = "Remove to run test")]
+        [Fact]
         public void Last_three_verses()
         {
             var expected =
@@ -85,7 +85,7 @@ namespace BeerSong
             Assert.Equal(expected, new BeerSong().Verses(2, 0));
         }
 
-        [Fact(Skip = "Remove to run test")]
+        [Fact]
         public void All_verses()
         {
             var expected =

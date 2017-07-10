@@ -21,13 +21,25 @@ namespace BeerSong
 
         public string Verses(int begin, int end)
         {
-            StringBuilder verseBuilder = new StringBuilder();
             CheckBeginAndEndValid(begin, end);
-            for (int index = begin; index <= end; index ++)
+            return GetVersesText(begin, end);
+        }
+
+        private string GetVersesText(int begin, int end)
+        {
+            StringBuilder verseBuilder = new StringBuilder();
+            for (int index = begin; index >= end; index--)
             {
-                verseBuilder.AppendLine(Verse(index));
+                GetVerseText(begin, verseBuilder, index);
             }
             return verseBuilder.ToString();
+        }
+
+        private void GetVerseText(int begin, StringBuilder verseBuilder, int index)
+        {
+            if (index != begin)
+                verseBuilder.Append("\n");
+            verseBuilder.Append(Verse(index));
         }
 
         private void CheckBeginAndEndValid(int begin, int end)
